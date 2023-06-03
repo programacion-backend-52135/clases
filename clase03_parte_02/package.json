@@ -1,0 +1,14 @@
+{
+  "name": "clase03_parte_02",
+  "version": "1.0.0",
+  "description": "No tinene",
+  "main": "actividad1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R2",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
