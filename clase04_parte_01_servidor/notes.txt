@@ -1,0 +1,9 @@
+Pasos para express
+
+npm init -y
+npm install express
+
+Ir al package.json
+Agregar la siguiente linea
+
+"type": "module",
