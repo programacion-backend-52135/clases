@@ -1,0 +1,10 @@
+<div>
+    <ul>
+        {{#each users}}
+            <li>
+                {{this.name}} is {{this.age}} years old
+                {{#if this.admin }} (ADMIN) {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
