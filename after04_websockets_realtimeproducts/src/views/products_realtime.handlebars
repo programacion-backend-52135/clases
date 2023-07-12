@@ -1,0 +1,47 @@
+<h2>Products - Real Time</h2>
+
+<form id='myForm'>
+    Name: <input type="text" name="name">
+    <br>
+    Price: <input type="number" name="price">
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+
+<hr>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.price}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io()
+
+    document.getElementById('myForm').onsubmit = e => {
+        e.preventDefault()
+
+        const name = document.querySelector('input[name=name]').value
+        const price = parseInt(document.querySelector('input[name=price]').value)
+
+        const product = { name, price }
+        socket.emit('new-product', product)
+
+    }
+
+</script>

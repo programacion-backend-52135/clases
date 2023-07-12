@@ -1,0 +1,22 @@
+<h2>Products</h2>
+<a href="/form-products">Crear Productos</a>
+<hr>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.price}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
