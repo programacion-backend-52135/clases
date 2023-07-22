@@ -1,0 +1,18 @@
+{
+  "name": "Poke Project",
+  "version": "1.0.0",
+  "description": "Project about Pokemon",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.0",
+    "mongoose": "^7.4.0"
+  }
+}
