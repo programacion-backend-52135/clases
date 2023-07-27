@@ -1,24 +1,28 @@
 import { Router } from 'express'
-import CartManager from '../manager/cart.manager.js'
+import CartModel from '../DAO/mongoManager/models/cart.model.js'
 
 const router = Router()
-const cartManager = new CartManager()
 
 router.get('/', async (req, res) => {
-    const result = await cartManager.list()
+    const result = await CartModel.find()
     res.send(result)
 })
 
+// Add product to cart
 router.get('/:idc/:idp', async (req, res) => {
-    const idc = parseInt(req.params.idc)
-    const idp = parseInt(req.params.idp)
+    const idc = req.params.idc
+    const idp = req.params.idp
+    const quantity = req.query.quantity || 1
 
-    const result = await cartManager.addProduct(idc, idp)
+    const cart = await CartModel.findById(idc)
+    cart.products.push({ id: idp, quantity })
+    const result = cart.save()
+
     res.send(result)
 })
 
 router.post('/', async (req, res) => {
-    const result = await cartManager.create()
+    const result = await CartModel.create({products: []})
     res.send(result)
 })
 
