@@ -1,0 +1,19 @@
+{
+  "name": "clase09_poarte2_mongo_agregation_pagination",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.0",
+    "mongoose": "^7.4.1",
+    "mongoose-paginate-v2": "^1.7.31"
+  }
+}
