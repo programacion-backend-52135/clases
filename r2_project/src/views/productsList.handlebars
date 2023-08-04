@@ -1,0 +1,47 @@
+<h2>Products</h2>
+<a href="/form-products">Crear Productos</a>
+<hr>
+
+<div class="row">
+
+    <form id="form">
+        Limit: <input type="number" id="query-limit" value="{{limit}}"><br>
+        Page: <input type="number" id="query-page" value="{{page}}"><br>
+        <br>
+        <button type="submit">Load</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each docs}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.stock}}</td>
+                    <td>{{this.price}}</td>
+                    <td><button>Actualizar</button><button>Ver</button></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('form').onsubmit = (e) => {
+            e.preventDefault()
+            const limit = document.getElementById('query-limit').value
+            const page = document.getElementById('query-page').value
+
+            const url = `/list?limit=${limit}&page=${page}`
+            
+            window.location.href = url
+        }
+    </script>
+
+</div>

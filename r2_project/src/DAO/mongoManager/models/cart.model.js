@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const cartModel = mongoose.model('carts', new mongoose.Schema({
+const CartModel = mongoose.model('carts', new mongoose.Schema({
     products: {
         type: [{
             id: String,
@@ -9,4 +9,4 @@ const cartModel = mongoose.model('carts', new mongoose.Schema({
     }
 }))
 
-export default cartModel
+export default CartModel
