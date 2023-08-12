@@ -4,7 +4,9 @@ import session from 'express-session'
 import MongoStore from 'connect-mongo'
 import handlebars from 'express-handlebars'
 import userRouter from './routes/session.route.js'
+import passport from 'passport'
 import __dirname from './utils.js'
+import initializePassport from './config/passport.config.js'
 
 const app = express()
 const uri = "mongodb://admin:admin@127.0.0.1:27017"
@@ -36,6 +38,11 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
+
+// Passport
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/', userRouter)
 
