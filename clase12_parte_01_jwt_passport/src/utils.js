@@ -24,11 +24,14 @@ export const generateToken = (user) => {
 
 // JWT Extraemos el token del header
 export const authToken = (req, res, next) => {
-    const authHeader = req.headers.auth
+    let authHeader = req.headers.auth
     if(!authHeader) {
+      authHeader = req.cookies['coderToken'] 
+      if(!authHeader) {
         return res.status(401).send({
             error: 'Not auth'
         })
+      }
     }
 
     const token = authHeader

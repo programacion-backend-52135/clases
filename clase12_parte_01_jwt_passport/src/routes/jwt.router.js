@@ -20,7 +20,10 @@ router.post('/register', (req, res) => {
     usersDB.push(user)
     const access_token = generateToken(user)
 
-    res.send({ status: 'success', access_token })
+    res.cookie('coderToken', access_token, {
+        maxAge: 60*60*1000,
+        httpOnly: true
+    }).send({message: 'Logged In!'})
 })
 
 router.post('/login', (req, res) => {
@@ -30,7 +33,12 @@ router.post('/login', (req, res) => {
     if(!user) return res.status(401).send({status: "error", error: 'Invalid pass'})
 
     const access_token = generateToken(user)
-    res.send({ status: 'success', access_token })
+    
+    res.cookie('coderToken', access_token, {
+        maxAge: 60*60*1000,
+        httpOnly: true
+    }).send({message: 'Logged In!'})
+
 })
 
 router.get('/current', authToken, (req, res) => {

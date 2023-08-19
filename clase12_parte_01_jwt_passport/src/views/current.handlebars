@@ -1,4 +1,14 @@
+<div id="result"></div>
 
-<a href="/login">Login Local</a>
-<hr>
-<a href="/login-github">Login Github</a>
+<script>
+
+    fetch('/jwt/current', {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(r => r.json())
+        .then(data => {
+            document.getElementById('result').innerHTML = JSON.stringify(data)
+        })
+
+</script>
