@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import handlebars from 'express-handlebars'
 import __dirname from './utils.js'
 import jwtRouter from './routes/jwt.router.js'
+import viewsRouter from './routes/views.router.js'
 
 const app = express()
 const uri = "mongodb://admin:admin@127.0.0.1:27017"
@@ -19,6 +20,7 @@ app.engine('handlebars', handlebars.engine())
 app.set('views', __dirname + '/views')
 app.set('view engine', 'handlebars')
 
+app.use('/', viewsRouter)
 app.use('/jwt', jwtRouter)
 
 mongoose.connect(uri, { dbName })
