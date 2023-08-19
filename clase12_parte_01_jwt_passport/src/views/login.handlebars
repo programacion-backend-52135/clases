@@ -1,6 +1,25 @@
-<form action="/login" method="post">
-    Email: <input name="email" type="text"><br>
-    Pass: <input name="password" type="text"><br>
+<form id='form'>
+    Email: <input name="email" id="email" type="text"><br>
+    Pass: <input name="password" id="password" type="text"><br>
     <hr>
     <button type="submit">Login</button>
 </form>
+
+<script>
+    document.getElementById('form').onsubmit = e => {
+        e.preventDefault()
+
+        const email = document.getElementById('email').value
+        const password = document.getElementById('password').value
+
+        fetch('/jwt/login', {
+            method: 'POST',
+            body: JSON.stringify({ email, password}),
+            headers: {'Content-Type': 'application/json'}
+        })
+            .then(r => r.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+</script>
