@@ -6,8 +6,8 @@ router.get('/login', (req, res) => {
     res.render('login', {})
 })
 
-router.get('/current', (req, res) => {
-    res.render('current', {})
+router.get('/', (req, res) => {
+    res.render('home', {})
 })
 
 export default router

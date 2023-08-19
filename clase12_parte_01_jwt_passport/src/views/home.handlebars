@@ -1,0 +1,26 @@
+<div id="result"></div>
+
+<button id="current">Just User</button>
+<button id="everyone">Everyone logged</button>
+
+<script>
+
+    document.getElementById('current').onclick = () => {
+        fetch('/jwt/current', { headers: { 'Content-Type': 'application/json' } })
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = JSON.stringify(data)
+            })
+    }
+
+    document.getElementById('everyone').onclick = () => {
+        fetch('/jwt/everyone', { headers: { 'Content-Type': 'application/json' } })
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = JSON.stringify(data)
+            })
+    }
+
+
+
+</script>

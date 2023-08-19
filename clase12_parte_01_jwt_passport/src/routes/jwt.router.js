@@ -1,12 +1,18 @@
 import { Router } from "express";
-import { generateToken, authToken, passportCall } from "../utils.js";
-import passport from "passport";
+import { generateToken, authToken, passportCall, authorization } from "../utils.js";
 
 const usersDB = [
     { 
         email: 'dario@gmail.com', 
         password: '123456', 
-        name: 'Dario' 
+        name: 'Dario',
+        role: 'user' 
+    },
+    { 
+        email: 'noah@gmail.com', 
+        password: '123456', 
+        name: 'Noah Brisa',
+        role: 'seller'
     },
 ]
 const router = Router()
@@ -42,7 +48,12 @@ router.post('/login', (req, res) => {
 
 })
 
-router.get('/current', passportCall('jwt'), (req, res) => {
+router.get('/everyone', passportCall('jwt'), (req, res) => {
+    console.log('Path /everyone')
+    res.send({ status: 'success', payload: req.user })
+})
+
+router.get('/current', passportCall('jwt'), authorization('user'), (req, res) => {
     console.log('Path /current')
     res.send({ status: 'success', payload: req.user })
 })
