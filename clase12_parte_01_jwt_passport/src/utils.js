@@ -1,11 +1,13 @@
 import {fileURLToPath} from 'url'
 import { dirname } from 'path'
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import passport from 'passport'
 
-const PRIVATE_KEY = 'CoderKeyFromValentinAAAAA91929129129'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const PRIVATE_KEY = 'coderTokenForJWT'
 
 export const createHash = (password) => {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10))
@@ -24,6 +26,8 @@ export const generateToken = (user) => {
 
 // JWT Extraemos el token del header
 export const authToken = (req, res, next) => {
+
+    // Buscamos el token en el header o en la cookie
     let authHeader = req.headers.auth
     if(!authHeader) {
       authHeader = req.cookies['coderToken'] 
@@ -34,6 +38,7 @@ export const authToken = (req, res, next) => {
       }
     }
 
+    // Verificamos y desencriptamos la informacion 
     const token = authHeader
     jwt.verify(token, PRIVATE_KEY, (error, credentials) => {
         if(error) return res.status(403).send({error: 'Not authroized'})
@@ -42,5 +47,22 @@ export const authToken = (req, res, next) => {
         next()
     })
 }
+
+export const passportCall = strategy => {
+    return async(req, res, next) => {
+        passport.authenticate(strategy, function(err, user, info) {
+            if(err) return next(err)
+            if(!user) {
+                return res.status(401).send({
+                    error: info.messages? info.messages : info.toString()
+                })
+            }
+
+            req.user = user
+            next()
+        })(req, res, next)
+    }
+}
+
 
 export default __dirname
