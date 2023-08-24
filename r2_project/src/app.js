@@ -7,10 +7,35 @@ import cartRouter from './routes/cart.router.js'
 import viewsRouter from './routes/views.router.js'
 import ProductManager from './DAO/fileManager/product.manager.js'
 import __dirname from './utils.js'
+import initializePassport from './config/passport.config.js'
+import passport from 'passport'
+import MongoStore from 'connect-mongo'
+import session from 'express-session'
+
+const URL_MONGO = 'mongodb://admin:admin@127.0.0.1:27017'
+const MONGO_DB_NAME = 'r2_project'
 
 const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+app.use(session({
+    store: MongoStore.create({
+        mongoUrl: URL_MONGO,
+        dbName: MONGO_DB_NAME,
+        mongoOptions: {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        }
+    }),
+    secret: 'secret',
+    resave: true,
+    saveUnitialized: true
+}))
+
+initializePassport()
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.engine('handlebars', handlebars.engine())
 app.set('views', __dirname + '/views')
@@ -38,8 +63,8 @@ const runServer = () => {
 }
 
 console.log('Connecting...')
-mongoose.connect('mongodb://admin:admin@127.0.0.1:27017', {
-    dbName: 'r2_project'
+mongoose.connect(URL_MONGO, {
+    dbName: MONGO_DB_NAME
 })
     .then(() => {
         console.log('DB connected!!')

@@ -1,16 +1,1 @@
-[
-    {
-        "name": "Maracuya",
-        "image": "https://www.comedera.com/wp-content/uploads/2022/08/Jugo-de-maracuya-con-avenashutterstock_1976561654.jpg",
-        "description": "Delicius",
-        "price": "200",
-        "id": 1
-    },
-    {
-        "name": "Lulo",
-        "image": "https://supermercadosla80.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd0J3a1E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--39d0985ab2a4e58be5655964fedf501f3223fbf4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9TY21WemFYcGxYM1J2WDJacGRGc0hhUUpZQW1rQ1dBST0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--361554d0b7dd92546ceda39454543fcece989fd5/Lulo-1.jpg?locale=es",
-        "description": "Citrico de Colombia",
-        "price": "120",
-        "id": 2
-    }
-]
+[{"name":"Maracuya","image":"https://www.comedera.com/wp-content/uploads/2022/08/Jugo-de-maracuya-con-avenashutterstock_1976561654.jpg","description":"Delicius","price":"200","id":1},{"name":"Lulo","image":"https://supermercadosla80.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd0J3a1E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--39d0985ab2a4e58be5655964fedf501f3223fbf4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9TY21WemFYcGxYM1J2WDJacGRGc0hhUUpZQW1rQ1dBST0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--361554d0b7dd92546ceda39454543fcece989fd5/Lulo-1.jpg?locale=es","description":"Citrico de Colombia","price":"120","id":2},{"name":"R2","image":"https://supermercadosla80.com/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBd0J3a1E9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--39d0985ab2a4e58be5655964fedf501f3223fbf4/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9TY21WemFYcGxYM1J2WDJacGRGc0hhUUpZQW1rQ1dBST0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--361554d0b7dd92546ceda39454543fcece989fd5/Lulo-1.jpg?locale=es","description":"Delicius","price":"1000","id":3}]
