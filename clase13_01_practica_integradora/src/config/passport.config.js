@@ -62,8 +62,9 @@ const initializePassport = () => {
         }
     ))
 
-    passport.serializeUser((user, done) => {
-        done(null, user._id)
+    passport.serializeUser(async (user, done) => {
+        console.log('asdasd')
+        return done(null, user._id)
     })
 
     passport.deserializeUser(async (id, done) => {

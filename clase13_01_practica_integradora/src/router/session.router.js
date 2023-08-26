@@ -3,7 +3,15 @@ import passport from "passport";
 
 const router = Router()
 
-router.get('/', (req, res) => { res.render('home', {}) })
+router.get('/', (req, res) => { 
+    console.log('/')
+    res.render('home', {}) 
+})
+
+router.get('/home', (req, res) => { 
+    console.log('HOME')
+    res.render('home', {}) 
+})
 
 router.get('/login-github',
     passport.authenticate('github', { scope: ['user:email'] }),
@@ -14,7 +22,7 @@ router.get('/githubcallback',
     (req, res) => {
         console.log('Callback:', req.user)
 
-        res.cookie('keyCookieForJWT', req.user.token).redirect('/')
+        res.cookie('keyCookieForJWT', req.user.token).redirect('/home')
     }
 )
 

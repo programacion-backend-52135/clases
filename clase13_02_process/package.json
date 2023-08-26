@@ -1,0 +1,18 @@
+{
+  "name": "clase13_02_process",
+  "version": "1.0.0",
+  "description": "",
+  "main": "process.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}

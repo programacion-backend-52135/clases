@@ -11,6 +11,10 @@ import cookieParser from 'cookie-parser'
 
 const app = express()
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + "/public"));
+
 // Handlebars
 app.engine('handlebars', handlebars.engine())
 app.set('views', __dirname + '/views')
