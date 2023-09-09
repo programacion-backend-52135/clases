@@ -10,7 +10,7 @@ class FileManager {
         return (list.length == 0) ? 1 : list[list.length - 1].id + 1
     }
 
-    get = async () => {
+    get = async (query) => {
         return fs.promises.readFile(this.filename, 'utf-8')
         .then(r => JSON.parse(r))
         .catch(e => {

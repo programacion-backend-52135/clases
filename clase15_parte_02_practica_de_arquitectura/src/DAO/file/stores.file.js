@@ -5,7 +5,7 @@ export default class Store extends FileManager {
         super(filename)
     }
 
-    getStores = async () => { return await this.get() }
+    getStores = async (query = {}) => { return await this.get(query) }
     getStoreById = async (id) => { return await this.getById(id) }
     saveStore = async (store) => { return await this.add(store) }
     updateStore = async (id, store) => {

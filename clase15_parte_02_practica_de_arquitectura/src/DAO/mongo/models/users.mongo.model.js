@@ -6,7 +6,7 @@ const UsersModel = mongoose.model('users', new mongoose.Schema({
     role: String,
     orders: [
         {
-            type: mongoose.SchemaType.ObjectId,
+            type: mongoose.SchemaTypes.ObjectId,
             ref: 'orders'
         }
     ]
