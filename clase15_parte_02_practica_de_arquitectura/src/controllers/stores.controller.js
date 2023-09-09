@@ -22,7 +22,7 @@ export const addStore = async (req, res) => {
 }
 
 export const addProduct = async (req, res) => {
-    const product = req.body
+    const product = req.body // { name: 'asd', price: 123 }
     const { sid } = req.params
 
     const result = await storesService.addProduct(sid, product)
