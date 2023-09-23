@@ -1,3 +1,4 @@
+
 import FileManager from "./file.manager.js";
 
 export default class CartManager extends FileManager {
