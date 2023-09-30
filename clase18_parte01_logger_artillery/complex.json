@@ -1,0 +1,166 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 40,
+      "vusers.created": 40,
+      "http.requests": 49,
+      "http.codes.200": 9,
+      "http.responses": 9,
+      "http.downloaded_bytes": 243,
+      "errors.ETIMEDOUT": 40,
+      "vusers.failed": 40
+    },
+    "rates": {
+      "http.request_rate": 2
+    },
+    "firstCounterAt": 1696089311263,
+    "firstHistogramAt": 1696089311803,
+    "lastCounterAt": 1696089330616,
+    "lastHistogramAt": 1696089320614,
+    "firstMetricAt": 1696089311263,
+    "lastMetricAt": 1696089330616,
+    "period": 1696089330000,
+    "summaries": {
+      "http.response_time": {
+        "min": 524,
+        "max": 9149,
+        "count": 9,
+        "p50": 2369,
+        "median": 2369,
+        "p75": 5826.9,
+        "p90": 7407.5,
+        "p95": 7407.5,
+        "p99": 7407.5,
+        "p999": 7407.5
+      }
+    },
+    "histograms": {
+      "http.response_time": {
+        "min": 524,
+        "max": 9149,
+        "count": 9,
+        "p50": 2369,
+        "median": 2369,
+        "p75": 5826.9,
+        "p90": 7407.5,
+        "p95": 7407.5,
+        "p99": 7407.5,
+        "p999": 7407.5
+      }
+    }
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 40,
+        "vusers.created": 40,
+        "http.requests": 48,
+        "http.codes.200": 8,
+        "http.responses": 8,
+        "http.downloaded_bytes": 216
+      },
+      "rates": {
+        "http.request_rate": 6
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1696089311263,
+      "firstHistogramAt": 1696089311803,
+      "lastCounterAt": 1696089318907,
+      "lastHistogramAt": 1696089318906,
+      "firstMetricAt": 1696089311263,
+      "lastMetricAt": 1696089318907,
+      "period": "1696089310000",
+      "summaries": {
+        "http.response_time": {
+          "min": 524,
+          "max": 7466,
+          "count": 8,
+          "p50": 1901.1,
+          "median": 1901.1,
+          "p75": 4065.2,
+          "p90": 5826.9,
+          "p95": 5826.9,
+          "p99": 5826.9,
+          "p999": 5826.9
+        }
+      },
+      "histograms": {
+        "http.response_time": {
+          "min": 524,
+          "max": 7466,
+          "count": 8,
+          "p50": 1901.1,
+          "median": 1901.1,
+          "p75": 4065.2,
+          "p90": 5826.9,
+          "p95": 5826.9,
+          "p99": 5826.9,
+          "p999": 5826.9
+        }
+      }
+    },
+    {
+      "counters": {
+        "http.codes.200": 1,
+        "http.responses": 1,
+        "http.downloaded_bytes": 27,
+        "http.requests": 1,
+        "errors.ETIMEDOUT": 39,
+        "vusers.failed": 39
+      },
+      "rates": {
+        "http.request_rate": 1
+      },
+      "http.request_rate": null,
+      "firstCounterAt": 1696089320614,
+      "firstHistogramAt": 1696089320614,
+      "lastCounterAt": 1696089328907,
+      "lastHistogramAt": 1696089320614,
+      "firstMetricAt": 1696089320614,
+      "lastMetricAt": 1696089328907,
+      "period": "1696089320000",
+      "summaries": {
+        "http.response_time": {
+          "min": 9149,
+          "max": 9149,
+          "count": 1,
+          "p50": 9230.4,
+          "median": 9230.4,
+          "p75": 9230.4,
+          "p90": 9230.4,
+          "p95": 9230.4,
+          "p99": 9230.4,
+          "p999": 9230.4
+        }
+      },
+      "histograms": {
+        "http.response_time": {
+          "min": 9149,
+          "max": 9149,
+          "count": 1,
+          "p50": 9230.4,
+          "median": 9230.4,
+          "p75": 9230.4,
+          "p90": 9230.4,
+          "p95": 9230.4,
+          "p99": 9230.4,
+          "p999": 9230.4
+        }
+      }
+    },
+    {
+      "counters": {
+        "errors.ETIMEDOUT": 1,
+        "vusers.failed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1696089330616,
+      "lastCounterAt": 1696089330616,
+      "firstMetricAt": 1696089330616,
+      "lastMetricAt": 1696089330616,
+      "period": "1696089330000",
+      "summaries": {},
+      "histograms": {}
+    }
+  ]
+}

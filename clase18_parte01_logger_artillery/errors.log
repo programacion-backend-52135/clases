@@ -1,0 +1,23 @@
+{"level":"error","message":"Se cayo el server 👎 "}
+{"level":"warn","message":"Don't worry. Is just a warning"}
+fatal: FATAL !!! 
+error: Se cayo el server 👎 
+warning: Don't worry. Is just a warning
+info: GET on /test - 10:10:44 AM
+fatal: FATAL !!! 
+error: Se cayo el server 👎 
+warning: Don't worry. Is just a warning
+info: Se llamo a esta url
+info: GET on /test - 10:11:00 AM
+fatal: FATAL !!! 
+error: Se cayo el server 👎 
+warning: Don't worry. Is just a warning
+info: Se llamo a esta url
+info: GET on /test - 10:12:13 AM
+fatal: FATAL !!! 
+error: Se cayo el server 👎 
+warning: Don't worry. Is just a warning
+info: Se llamo a esta url
+fatal: FATAL !!! 
+error: Se cayo el server 👎 
+warning: Don't worry. Is just a warning
