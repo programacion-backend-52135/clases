@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubeservice
+spec:
+  selector:
+    app: kubemarcelo
+  ports:
+    - port: 8082
+      targetPort: 8080
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kebuappmarcelo
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: kubemarcelo
+  template:
+    metadata:
+      labels:
+        app: kubemarcelo
+    spec:
+      containers:
+        - name: kubecontainers
+          image: arturoverbel/lautaroservice:1.0.0
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
