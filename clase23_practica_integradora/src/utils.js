@@ -6,7 +6,7 @@ const PRIVATE_KEY = config.jwtPrivateKEY
 
 // Generamos el TOKEN
 export const generateToken = user => {
-    const token = jwt.sign(user, PRIVATE_KEY, { expiresIn: '24h' })
+    const token = jwt.sign({ user }, PRIVATE_KEY, { expiresIn: '24h' })
 
     return token
 }
@@ -18,7 +18,9 @@ export const generateToken = user => {
  */
 // EXTRAEM el TOKEN
 export const passportJWT = () => {
+    
     return async (req, res, next) => {
+        console.log('exec')
         passport.authenticate('jwt', function (err, user, info) {
             if (err) return next(err)
             if (!user) {
@@ -33,11 +35,12 @@ export const passportJWT = () => {
 
 // Comprobamos la atorizacion del TOKEN
 export const auth = (role) => {
-    return async(req, res, next) => {
-        const user = req.user
+    return async (req, res, next) => {
+        const user = req.user?.user
+        console.log(user)
 
-        if(!user) return res.status(401).send({error: "Unauthenticated"})
-        if(user.role != role) return res.status(403).send({error: 'Unauthorized'})
+        if (!user) return res.status(401).send({ error: "Unauthenticated" })
+        if (user.role != role) return res.status(403).send({ error: 'Unauthorized' })
 
         return next()
     }

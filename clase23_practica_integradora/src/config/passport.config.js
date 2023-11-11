@@ -54,11 +54,21 @@ const initializePassport = () => {
         secretOrKey: PRIVATE_KEY
     }, async (jwt_payload, done) => {
         try {
+            console.log('asdasdasd')
             return done(null, jwt_payload)
         } catch (e) {
             return done(error)
         }
     }))
+
+    passport.serializeUser((user, done) => {
+        done(null, user?.id ?? user._id)
+    })
+
+    passport.deserializeUser(async (id, done) => {
+        const user = await userService.getById(id)
+        done(null, user )
+    })
 }
 
 export default initializePassport

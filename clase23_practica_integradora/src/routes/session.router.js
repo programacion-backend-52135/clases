@@ -20,7 +20,7 @@ router.post(
     login
 )
 
-router.get('/private', passportJWT, privateUser)
+router.get('/private', passportJWT(), privateUser)
 
 router.get('/error', errorUser)
 
