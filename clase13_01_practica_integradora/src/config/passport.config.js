@@ -12,9 +12,9 @@ const initializePassport = () => {
     // Login and Register
     passport.use('github', new GithubStrategy(
         {
-            clientID: 'Iv1.42ae653ed8a66872',
-            clientSecret: '7eff1a591930fc3823944a2934e421ebdda6dba9',
-            callbackURL: 'http://127.0.0.1:8080/githubcallback'
+            clientID: 'Iv1.0e52272e01d5e745',
+            clientSecret: '893424e8a2f128938832d5eb179e04941948a7d9',
+            callbackURL: 'http://localhost:8080/githubcallback'
         },
         async (accessToken, refreshToken, profile, done) => {
             console.log(profile)
@@ -49,6 +49,59 @@ const initializePassport = () => {
             }
         }
     ))
+
+    // passport.use('register', new LocalStrategy({
+    //     passReqToCallback: true,
+    //     usernameField: 'email'
+    // }, async (req, username, password, done) => {
+
+    //     const {first_name, last_name, email, age } = req.body
+    //     try {
+    //         const user = await UserService.getOneByEmail(username)
+    //         if(user) {
+    //             console.log("User already exits");
+    //             return done(null, false)
+    //         }
+
+    //         const newUser = {
+    //             first_name,
+    //             last_name,
+    //             email,
+    //             age,
+    //             role: 'user',
+    //             social: 'local',
+    //             password: createHash(password)
+    //         }
+    //         const result = await UserService.create(newUser)
+            
+    //         return done(null, result)
+    //     } catch (error) {
+    //         return done("[LOCAL] Error al obtener user " + error)
+    //     }
+
+
+    // }))
+
+    // passport.use('login', new LocalStrategy({
+    //     usernameField: 'email'
+    // }, async (username, password, done) => {
+    //     try {
+    //         const user = await UserService.getOneByEmail(username)
+    //         if(!user) {
+    //             console.log("User dont exist");
+    //             return done(null, user)
+    //         }
+
+    //         if(!isValidPassword(user, password)) return done(null, false)
+
+    //         const token = generateToken(user)
+    //         user.token = token
+
+    //         return done(null, user)
+    //     } catch (error) {
+            
+    //     }
+    // }))
 
     // Autenticacion. Extrae y valida el JWT
     passport.use('jwt', new JWTstrategy(
